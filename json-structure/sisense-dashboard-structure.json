@@ -1,0 +1,79 @@
+{
+  "title": "Sisense Dashboard Structure",
+  "description": "Documentation of the dashboard data structure returned by the Sisense REST API",
+  "type": "object",
+  "fields": [
+    {
+      "name": "oid",
+      "type": "string",
+      "required": true,
+      "description": "MongoDB ObjectId serving as the unique dashboard identifier"
+    },
+    {
+      "name": "title",
+      "type": "string",
+      "required": true,
+      "description": "Dashboard display title shown to users"
+    },
+    {
+      "name": "desc",
+      "type": "string",
+      "required": false,
+      "description": "Optional dashboard description"
+    },
+    {
+      "name": "owner",
+      "type": "string (user ID)",
+      "required": true,
+      "description": "User ID of the dashboard creator and primary owner"
+    },
+    {
+      "name": "folder",
+      "type": "string (folder ID)",
+      "required": false,
+      "description": "Parent folder ID for organizing dashboards in the portal"
+    },
+    {
+      "name": "shares",
+      "type": "array",
+      "required": false,
+      "description": "Access control list of user and group share permissions"
+    },
+    {
+      "name": "shares[].shareId",
+      "type": "string",
+      "required": true,
+      "description": "User or group ID being granted access"
+    },
+    {
+      "name": "shares[].type",
+      "type": "enum (user|group)",
+      "required": true,
+      "description": "Type of entity being granted access"
+    },
+    {
+      "name": "shares[].rule",
+      "type": "enum (view|edit)",
+      "required": true,
+      "description": "Permission level: view (read-only) or edit (full access)"
+    },
+    {
+      "name": "created",
+      "type": "string (ISO 8601 datetime)",
+      "required": false,
+      "description": "Dashboard creation timestamp"
+    },
+    {
+      "name": "lastUpdated",
+      "type": "string (ISO 8601 datetime)",
+      "required": false,
+      "description": "Timestamp of the most recent modification"
+    },
+    {
+      "name": "type",
+      "type": "string",
+      "required": false,
+      "description": "Dashboard type identifier (e.g., dashboard)"
+    }
+  ]
+}

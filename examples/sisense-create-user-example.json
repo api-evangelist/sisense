@@ -1,0 +1,33 @@
+{
+  "title": "Create User Example",
+  "description": "Example request and response for creating a new Sisense user",
+  "request": {
+    "method": "POST",
+    "url": "https://your-instance.sisense.com/api/v1/users",
+    "headers": {
+      "Authorization": "Bearer your-api-token-here",
+      "Content-Type": "application/json"
+    },
+    "body": {
+      "email": "jane.smith@acme.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "role": "designer",
+      "groups": ["5e3a1b2c3d4e5f6a7b8c9d01"]
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": {
+      "_id": "5f7a9b8c1234567890abcdef",
+      "email": "jane.smith@acme.com",
+      "firstName": "Jane",
+      "lastName": "Smith",
+      "userName": "jane.smith@acme.com",
+      "role": "designer",
+      "groups": ["5e3a1b2c3d4e5f6a7b8c9d01"],
+      "active": true,
+      "created": "2026-05-02T12:00:00.000Z"
+    }
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://developer.sisense.com/schemas/dashboard",
+  "title": "Sisense Dashboard",
+  "description": "A Sisense analytics dashboard containing widgets and visualization configurations.",
+  "type": "object",
+  "properties": {
+    "oid": {
+      "type": "string",
+      "description": "Dashboard unique identifier"
+    },
+    "title": {
+      "type": "string",
+      "description": "Dashboard display title"
+    },
+    "desc": {
+      "type": "string",
+      "description": "Dashboard description"
+    },
+    "owner": {
+      "type": "string",
+      "description": "User ID of the dashboard owner"
+    },
+    "folder": {
+      "type": "string",
+      "description": "Parent folder ID for dashboard organization"
+    },
+    "shares": {
+      "type": "array",
+      "description": "List of share permissions granting access to users and groups",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shareId": {"type": "string"},
+          "type": {"type": "string", "enum": ["user", "group"]},
+          "rule": {"type": "string", "enum": ["view", "edit"]}
+        }
+      }
+    },
+    "created": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Dashboard creation timestamp"
+    },
+    "lastUpdated": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Last modification timestamp"
+    },
+    "type": {
+      "type": "string",
+      "description": "Dashboard type identifier"
+    }
+  },
+  "required": ["oid", "title"]
+}

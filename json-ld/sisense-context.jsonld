@@ -1,0 +1,50 @@
+{
+  "@context": {
+    "@vocab": "https://schema.org/",
+    "sisense": "https://developer.sisense.com/schema/",
+    "Dashboard": "sisense:Dashboard",
+    "Widget": "sisense:Widget",
+    "Elasticube": "sisense:Elasticube",
+    "DataSecurityRule": "sisense:DataSecurityRule",
+    "User": "schema:Person",
+    "Group": "schema:Organization",
+    "oid": "@id",
+    "_id": "@id",
+    "title": "schema:name",
+    "desc": "schema:description",
+    "owner": {
+      "@id": "schema:creator",
+      "@type": "@id"
+    },
+    "email": "schema:email",
+    "firstName": "schema:givenName",
+    "lastName": "schema:familyName",
+    "role": "sisense:role",
+    "groups": {
+      "@id": "schema:memberOf",
+      "@type": "@id",
+      "@container": "@set"
+    },
+    "shares": {
+      "@id": "sisense:shares",
+      "@container": "@set"
+    },
+    "created": {
+      "@id": "schema:dateCreated",
+      "@type": "schema:DateTime"
+    },
+    "lastUpdated": {
+      "@id": "schema:dateModified",
+      "@type": "schema:DateTime"
+    },
+    "active": "sisense:active",
+    "table": "sisense:table",
+    "column": "sisense:column",
+    "members": {
+      "@id": "sisense:members",
+      "@container": "@set"
+    },
+    "SoftwareApplication": "schema:SoftwareApplication",
+    "WebAPI": "schema:WebAPI"
+  }
+}

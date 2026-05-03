@@ -1,0 +1,30 @@
+{
+  "title": "List Dashboards Example",
+  "description": "Example request and response for listing dashboards via the Sisense REST API",
+  "request": {
+    "method": "GET",
+    "url": "https://your-instance.sisense.com/api/v1/dashboards?limit=10&fields=oid,title,owner,created",
+    "headers": {
+      "Authorization": "Bearer your-api-token-here"
+    }
+  },
+  "response": {
+    "status": 200,
+    "body": [
+      {
+        "oid": "5e4f8c2a1234567890abcdef",
+        "title": "Sales Performance Q1 2026",
+        "owner": "5e3a1b2c3d4e5f6a7b8c9d0e",
+        "created": "2026-01-15T09:00:00.000Z",
+        "lastUpdated": "2026-04-30T14:22:00.000Z"
+      },
+      {
+        "oid": "5e4f8c2a1234567890fedcba",
+        "title": "Customer Churn Analysis",
+        "owner": "5e3a1b2c3d4e5f6a7b8c9d0e",
+        "created": "2026-02-20T11:30:00.000Z",
+        "lastUpdated": "2026-05-01T08:45:00.000Z"
+      }
+    ]
+  }
+}
