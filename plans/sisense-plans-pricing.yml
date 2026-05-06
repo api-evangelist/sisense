@@ -4,158 +4,255 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Sisense
 providerId: sisense
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: true
 tags:
   - Analytics
   - Business Intelligence
-  - Dashboards
-  - Data Models
   - Embedded Analytics
-description: Machine-readable plans and pricing scaffold for this API provider. Conforms to the API Commons
-  Plans schema. Tier limits and prices are scaffold defaults; replace with provider-published values.
+  - Compose SDK
+description: Sisense publishes a three-tier embedded-analytics catalog (Launch, Grow, Scale). Plans
+  are subscription-based and bundle storage, Sisense credits, designer seats, and viewer seats.
+  Additional designer/viewer seats and credits can be purchased a la carte; Scale pricing is custom.
+sources:
+  - https://www.sisense.com/pricing/
 plans:
-  - id: sisense-free
-    name: Free
-    type: freemium
-    description: Free entry tier for the Sisense API surface. Intended for evaluation, prototyping, and
-      low-volume integrations. Real limits and pricing must be reconciled with the provider's published
-      plan documentation.
+  - id: sisense-launch
+    name: Launch
+    type: subscription
+    description: Entry plan at USD 399/month for launching embedded analytics with Compose SDK.
+      Includes 20GB storage, 20K Sisense credits, 2 designer seats, 50 viewer seats, basic
+      dashboards, data connectivity, Sisense Intelligence, row-level security, and view-only
+      embedding. Premium support is available as an add-on.
     entries:
-      - label: API Requests
-        description: Monthly API request quota across all included endpoints
-        name: api_requests
-        type: quota
-        metric: requests
-        limit: 1000
+      - label: Subscription Fee
+        name: subscription_fee
+        type: subscription
+        metric: month
+        limit: 1
         timeFrame: month
         geo: global
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
         unit: 1
-        price: '0.00'
+        price: 'USD 399.00'
         userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the free tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 10
-        timeFrame: minute
-        geo: global
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
-        unit: 1
-        price: '0.00'
-        userMultiplied: false
-    elements:
-      - name: Public Documentation
-      - name: Community Support
-      - name: Sandbox Access
-      - name: Sisense REST API v1
-      - name: Sisense REST API v2
-      - name: Sisense User and Role Management API
-  - id: sisense-pro
-    name: Professional
-    type: paid
-    description: Production tier for Sisense. Provides higher quotas, priority support, and access to
-      the broader API portfolio. Pricing placeholder; align with the provider's pricing page.
-    entries:
-      - label: API Requests
-        description: Monthly API request quota
-        name: api_requests
+      - label: Storage
+        name: storage
         type: quota
-        metric: requests
-        limit: 100000
+        metric: gb
+        limit: 20
         timeFrame: month
         geo: global
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
         unit: 1
-        price: TBD
+        price: included
         userMultiplied: false
-      - label: Rate Limit
-        description: Maximum requests per minute on the professional tier
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 100
-        timeFrame: minute
+      - label: Sisense Credits
+        name: sisense_credits
+        type: quota
+        metric: credits
+        limit: 20000
+        timeFrame: month
         geo: global
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
         unit: 1
-        price: '0.00'
+        price: included
         userMultiplied: false
-      - label: Overage
-        description: Per-request price after monthly quota is exceeded
-        name: overage
+      - label: Designer Seats
+        name: designer_seats
+        type: quota
+        metric: seat
+        limit: 2
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: true
+      - label: Viewer Seats
+        name: viewer_seats
+        type: quota
+        metric: seat
+        limit: 50
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: true
+      - label: Additional Designer Seats
+        name: additional_designer_seats
+        type: tiered
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'see vendor pricing page'
+        userMultiplied: true
+      - label: Additional Viewer Seats
+        name: additional_viewer_seats
+        type: tiered
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'see vendor pricing page'
+        userMultiplied: true
+      - label: Additional Sisense Credits
+        name: additional_credits
         type: metered
-        metric: requests
+        metric: credits
         limit: -1
         timeFrame: month
         geo: global
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
-        unit: 1000
-        price: TBD
+        unit: 1
+        price: 'see vendor pricing page'
         userMultiplied: false
     elements:
-      - name: All Production Endpoints
-      - name: Email Support
-      - name: SLA Targets
-      - name: Webhook Subscriptions
-      - name: Sisense REST API v1
-      - name: Sisense REST API v2
-      - name: Sisense User and Role Management API
-  - id: sisense-enterprise
-    name: Enterprise
-    type: enterprise
-    description: Custom-negotiated tier for Sisense. Includes dedicated capacity, contractual SLAs, security
-      review, data residency options, and named technical account management.
+      - name: Compose SDK
+      - name: Basic Dashboards
+      - name: Data Connectivity
+      - name: Sisense Intelligence
+      - name: Row-Level Security
+      - name: View-Only Embedding
+      - name: Premium Support (add-on)
+  - id: sisense-grow
+    name: Grow
+    type: subscription
+    description: Mid-tier plan at USD 1,299/month for white-label, self-serve analytics. Includes
+      80GB storage, 50K Sisense credits, 5 designer seats, 100 viewer seats, full BI embedding, SSO,
+      automated reports, multi-environment support, and BYO LLM capability.
     entries:
-      - label: API Requests
-        description: Negotiated request volume; -1 indicates uncapped subject to fair use
-        name: api_requests
+      - label: Subscription Fee
+        name: subscription_fee
+        type: subscription
+        metric: month
+        limit: 1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'USD 1,299.00'
+        userMultiplied: false
+      - label: Storage
+        name: storage
         type: quota
-        metric: requests
+        metric: gb
+        limit: 80
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+      - label: Sisense Credits
+        name: sisense_credits
+        type: quota
+        metric: credits
+        limit: 50000
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: false
+      - label: Designer Seats
+        name: designer_seats
+        type: quota
+        metric: seat
+        limit: 5
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: true
+      - label: Viewer Seats
+        name: viewer_seats
+        type: quota
+        metric: seat
+        limit: 100
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: included
+        userMultiplied: true
+      - label: Additional Designer Seats
+        name: additional_designer_seats
+        type: tiered
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'see vendor pricing page'
+        userMultiplied: true
+      - label: Additional Viewer Seats
+        name: additional_viewer_seats
+        type: tiered
+        metric: seat
+        limit: -1
+        timeFrame: month
+        geo: global
+        unit: 1
+        price: 'see vendor pricing page'
+        userMultiplied: true
+    elements:
+      - name: Full BI Embedding
+      - name: SSO
+      - name: Automated Reports
+      - name: Multi-Environment Support
+      - name: BYO LLM
+      - name: White-Label
+  - id: sisense-scale
+    name: Scale
+    type: enterprise
+    description: Enterprise plan with custom pricing for high-scale embedded analytics. Includes
+      custom storage and credits, 10 designer seats, custom viewer seats, flexible deployment
+      (SaaS / dedicated cloud / on-premise), advanced security, auto-scaling, multi-tenant support,
+      99.99% SLA, HIPAA-ready, and premium support. Demo request required.
+    entries:
+      - label: Custom Negotiated Pricing
+        name: custom_pricing
+        type: flat
+        metric: varies
+        limit: -1
+        timeFrame: year
+        geo: configurable
+        unit: 1
+        price: 'contact sales'
+        userMultiplied: false
+      - label: Designer Seats
+        name: designer_seats
+        type: quota
+        metric: seat
+        limit: 10
+        timeFrame: month
+        geo: configurable
+        unit: 1
+        price: included
+        userMultiplied: true
+      - label: Storage
+        name: storage
+        type: quota
+        metric: gb
         limit: -1
         timeFrame: month
         geo: configurable
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
         unit: 1
-        price: custom
+        price: 'custom'
         userMultiplied: false
-      - label: Rate Limit
-        description: Negotiated burst and steady-state rate
-        name: rate_limit
-        type: rate
-        metric: requests_per_minute
-        limit: 1000
-        timeFrame: minute
+      - label: Sisense Credits
+        name: sisense_credits
+        type: quota
+        metric: credits
+        limit: -1
+        timeFrame: month
         geo: configurable
-        domains:
-          - https://your-sisense-host/api/v1
-          - https://your-sisense-host/api/v2
         unit: 1
-        price: custom
+        price: 'custom'
         userMultiplied: false
     elements:
-      - name: Unlimited / Negotiated Volume
-      - name: 24/7 Dedicated Support
-      - name: Contractual SLA
-      - name: Security & Compliance Review
-      - name: Dedicated Account Manager
-      - name: Custom Data Residency
-      - name: Sisense REST API v1
-      - name: Sisense REST API v2
-      - name: Sisense User and Role Management API
+      - name: Flexible Deployment (SaaS / Dedicated Cloud / On-Premise)
+      - name: Advanced Security
+      - name: Auto-Scaling
+      - name: Multi-Tenant Support
+      - name: 99.99% SLA
+      - name: HIPAA-Ready
+      - name: Premium Support
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
