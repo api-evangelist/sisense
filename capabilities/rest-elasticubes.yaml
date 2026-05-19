@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Sisense REST API — Elasticubes
+  description: 'Sisense REST API — Elasticubes. 1 operations. Lead operation: List Elasticubes. Self-contained Naftiko capability
+    covering one Sisense business surface.'
+  tags:
+  - Sisense
+  - Elasticubes
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    SISENSE_API_KEY: SISENSE_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: rest-elasticubes
+    baseUri: https://{host}/api/v1
+    description: Sisense REST API — Elasticubes business capability. Self-contained, no shared references.
+    resources:
+    - name: elasticubes-getElasticubes
+      path: /elasticubes/getElasticubes
+      operations:
+      - name: listelasticubes
+        method: GET
+        description: List Elasticubes
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.SISENSE_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: rest-elasticubes-rest
+    port: 8080
+    description: REST adapter for Sisense REST API — Elasticubes. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/elasticubes/getelasticubes
+      name: elasticubes-getelasticubes
+      description: REST surface for elasticubes-getElasticubes.
+      operations:
+      - method: GET
+        name: listelasticubes
+        description: List Elasticubes
+        call: rest-elasticubes.listelasticubes
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: rest-elasticubes-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Sisense REST API — Elasticubes. One tool per consumed operation, routed inline through this
+      capability's consumes block.
+    tools:
+    - name: list-elasticubes
+      description: List Elasticubes
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: rest-elasticubes.listelasticubes
+      outputParameters:
+      - type: object
+        mapping: $.
