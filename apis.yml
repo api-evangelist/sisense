@@ -102,6 +102,8 @@ common:
   url: https://support.sisense.com/
 - type: Integrations
   url: https://www.sisense.com/marketplace/
+- type: LLMsTxt
+  url: https://developer.sisense.com/llms.txt
 integrations:
 - name: Sisense
 - name: Rapid BI
