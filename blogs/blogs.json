@@ -2,6 +2,13 @@
   "repo": "sisense",
   "feeds": [
     {
+      "source": "https://www.sisense.com/blog/",
+      "feed_url": "https://www.sisense.com/blog/",
+      "title": "",
+      "saved": 0,
+      "method": "none"
+    },
+    {
       "source": "https://www.sisense.com/pricing/",
       "feed_url": "https://www.sisense.com/pricing/",
       "title": "",
@@ -9,6 +16,6 @@
       "method": "none"
     }
   ],
-  "fetched": "2026-06-01T23:35:02Z",
-  "post_count": 0
+  "post_count": 3,
+  "fetched": "2026-06-14T20:42:17Z"
 }
