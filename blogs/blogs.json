@@ -3,19 +3,12 @@
   "feeds": [
     {
       "source": "https://www.sisense.com/blog/",
-      "feed_url": "https://www.sisense.com/blog/",
-      "title": "",
+      "feed_url": "",
       "saved": 0,
-      "method": "none"
-    },
-    {
-      "source": "https://www.sisense.com/pricing/",
-      "feed_url": "https://www.sisense.com/pricing/",
-      "title": "",
-      "saved": 0,
-      "method": "none"
+      "method": "agent-scrape"
     }
   ],
-  "post_count": 3,
-  "fetched": "2026-06-14T20:42:17Z"
+  "fetched": "2026-06-27T13:09:48Z",
+  "post_count": 5,
+  "agent_pulled": "2026-06-27"
 }

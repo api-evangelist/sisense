@@ -95,7 +95,7 @@ common:
     url: https://support.sisense.com/
   - type: Integrations
     url: https://www.sisense.com/marketplace/
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://developer.sisense.com/llms.txt
 integrations:
   - name: Sisense
