@@ -71,6 +71,12 @@ apis:
       - type: Documentation
         url: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
 common:
+  - type: TrustCenter
+    url: security/sisense-trust-center.yml
+  - type: DomainSecurity
+    url: security/sisense-domain-security.yml
+  - type: Authentication
+    url: authentication/sisense-authentication.yml
   - type: LinkedIn
     url: https://www.linkedin.com/company/sisense
   - type: Website
