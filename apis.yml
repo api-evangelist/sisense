@@ -71,6 +71,8 @@ apis:
       - type: Documentation
         url: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
 common:
+  - type: AgenticAccess
+    url: agentic-access/sisense-agentic-access.yml
   - type: TrustCenter
     url: security/sisense-trust-center.yml
   - type: DomainSecurity
