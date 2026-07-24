@@ -1,0 +1,130 @@
+openapi: 3.1.0
+info:
+  title: Sisense REST Authentication Groups API
+  description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
+  version: v1
+  contact:
+    name: Sisense Support
+    url: https://support.sisense.com/
+  termsOfService: https://www.sisense.com/legal/terms-of-service/
+  license:
+    name: Commercial
+    url: https://www.sisense.com/legal/terms-of-service/
+servers:
+- url: https://{host}/api/v1
+  description: Sisense Instance REST API v1
+  variables:
+    host:
+      description: Your Sisense instance hostname
+      default: your-instance.sisense.com
+security:
+- bearerAuth: []
+tags:
+- name: Groups
+  description: Manage user groups for access control
+paths:
+  /groups:
+    get:
+      operationId: listGroups
+      summary: List Groups
+      description: Returns a list of user groups.
+      tags:
+      - Groups
+      parameters:
+      - name: limit
+        in: query
+        required: false
+        schema:
+          type: integer
+      - name: skip
+        in: query
+        required: false
+        schema:
+          type: integer
+      responses:
+        '200':
+          description: Groups retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Group'
+        '401':
+          description: Unauthorized
+    post:
+      operationId: createGroup
+      summary: Create Group
+      description: Creates a new user group.
+      tags:
+      - Groups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/CreateGroupRequest'
+      responses:
+        '200':
+          description: Group created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Group'
+        '401':
+          description: Unauthorized
+  /groups/{id}:
+    delete:
+      operationId: deleteGroup
+      summary: Delete Group
+      description: Deletes a user group.
+      tags:
+      - Groups
+      parameters:
+      - name: id
+        in: path
+        required: true
+        description: Group identifier
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Group deleted successfully
+        '404':
+          description: Group not found
+components:
+  schemas:
+    Group:
+      type: object
+      properties:
+        _id:
+          type: string
+          description: Group unique identifier
+        name:
+          type: string
+          description: Group display name
+        description:
+          type: string
+          description: Group description
+        created:
+          type: string
+          format: date-time
+    CreateGroupRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Group name
+        description:
+          type: string
+          description: Group description
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /api/v1/authentication/login
+externalDocs:
+  description: Sisense REST API Documentation
+  url: https://developer.sisense.com/guides/restApi/

@@ -1,0 +1,79 @@
+openapi: 3.1.0
+info:
+  title: Sisense REST Authentication API
+  description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
+  version: v1
+  contact:
+    name: Sisense Support
+    url: https://support.sisense.com/
+  termsOfService: https://www.sisense.com/legal/terms-of-service/
+  license:
+    name: Commercial
+    url: https://www.sisense.com/legal/terms-of-service/
+servers:
+- url: https://{host}/api/v1
+  description: Sisense Instance REST API v1
+  variables:
+    host:
+      description: Your Sisense instance hostname
+      default: your-instance.sisense.com
+security:
+- bearerAuth: []
+tags:
+- name: Authentication
+  description: Login and token management
+paths:
+  /authentication/login:
+    post:
+      operationId: login
+      summary: Login and Get Token
+      description: Authenticates a user with username and password, returning a Bearer token for use in subsequent API requests.
+      tags:
+      - Authentication
+      security: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - username
+              - password
+              properties:
+                username:
+                  type: string
+                  description: Sisense user email or username
+                password:
+                  type: string
+                  description: Sisense user password
+      responses:
+        '200':
+          description: Authentication successful, token returned
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/AuthResponse'
+        '401':
+          description: Invalid credentials
+components:
+  schemas:
+    AuthResponse:
+      type: object
+      properties:
+        token:
+          type: string
+          description: Bearer authentication token
+        success:
+          type: boolean
+        id:
+          type: string
+          description: Authenticated user ID
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /api/v1/authentication/login
+externalDocs:
+  description: Sisense REST API Documentation
+  url: https://developer.sisense.com/guides/restApi/

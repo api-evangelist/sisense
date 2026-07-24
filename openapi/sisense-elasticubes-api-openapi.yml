@@ -1,0 +1,68 @@
+openapi: 3.1.0
+info:
+  title: Sisense REST Authentication Elasticubes API
+  description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
+  version: v1
+  contact:
+    name: Sisense Support
+    url: https://support.sisense.com/
+  termsOfService: https://www.sisense.com/legal/terms-of-service/
+  license:
+    name: Commercial
+    url: https://www.sisense.com/legal/terms-of-service/
+servers:
+- url: https://{host}/api/v1
+  description: Sisense Instance REST API v1
+  variables:
+    host:
+      description: Your Sisense instance hostname
+      default: your-instance.sisense.com
+security:
+- bearerAuth: []
+tags:
+- name: Elasticubes
+  description: Manage Elasticube data models and builds
+paths:
+  /elasticubes/getElasticubes:
+    get:
+      operationId: listElasticubes
+      summary: List Elasticubes
+      description: Returns a list of all Elasticube data models.
+      tags:
+      - Elasticubes
+      responses:
+        '200':
+          description: Elasticubes retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Elasticube'
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    Elasticube:
+      type: object
+      properties:
+        title:
+          type: string
+          description: Elasticube name
+        status:
+          type: string
+          description: Current build status
+        server:
+          type: string
+          description: Host server name
+        address:
+          type: string
+          description: Server address
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /api/v1/authentication/login
+externalDocs:
+  description: Sisense REST API Documentation
+  url: https://developer.sisense.com/guides/restApi/

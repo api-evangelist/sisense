@@ -1,0 +1,116 @@
+openapi: 3.1.0
+info:
+  title: Sisense REST Authentication Data Security API
+  description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
+  version: v1
+  contact:
+    name: Sisense Support
+    url: https://support.sisense.com/
+  termsOfService: https://www.sisense.com/legal/terms-of-service/
+  license:
+    name: Commercial
+    url: https://www.sisense.com/legal/terms-of-service/
+servers:
+- url: https://{host}/api/v1
+  description: Sisense Instance REST API v1
+  variables:
+    host:
+      description: Your Sisense instance hostname
+      default: your-instance.sisense.com
+security:
+- bearerAuth: []
+tags:
+- name: Data Security
+  description: Configure row-level data security rules
+paths:
+  /elasticubes/{server}/{elasticube}/datasecurity:
+    get:
+      operationId: getDataSecurityRules
+      summary: Get Data Security Rules
+      description: Returns all data security rules for a specific Elasticube.
+      tags:
+      - Data Security
+      parameters:
+      - name: server
+        in: path
+        required: true
+        description: Server name (use 'LocalHost' for single-node)
+        schema:
+          type: string
+      - name: elasticube
+        in: path
+        required: true
+        description: Elasticube title
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Data security rules retrieved successfully
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/DataSecurityRule'
+        '401':
+          description: Unauthorized
+    post:
+      operationId: createDataSecurityRule
+      summary: Create Data Security Rule
+      description: Creates a data security rule for an Elasticube.
+      tags:
+      - Data Security
+      parameters:
+      - name: server
+        in: path
+        required: true
+        description: Server name
+        schema:
+          type: string
+      - name: elasticube
+        in: path
+        required: true
+        description: Elasticube title
+        schema:
+          type: string
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/DataSecurityRule'
+      responses:
+        '200':
+          description: Data security rule created successfully
+        '401':
+          description: Unauthorized
+components:
+  schemas:
+    DataSecurityRule:
+      type: object
+      properties:
+        column:
+          type: string
+          description: Column to apply the security rule to
+        table:
+          type: string
+          description: Table containing the column
+        datatype:
+          type: string
+          description: Data type of the column
+        members:
+          type: array
+          description: Users and groups this rule applies to
+          items:
+            type: object
+        exclusionary:
+          type: boolean
+          description: Whether the rule is exclusionary
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: Bearer token obtained from POST /api/v1/authentication/login
+externalDocs:
+  description: Sisense REST API Documentation
+  url: https://developer.sisense.com/guides/restApi/
