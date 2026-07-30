@@ -6,9 +6,22 @@ description: >-
   users, groups, data security rules, and builds. The platform supports both extract-based and live data model
   architectures with comprehensive programmatic administration capabilities.
 type: Index
+accessModel:
+  pricing: paid
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Paid · Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 position: Consumer
 access: 3rd-Party
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/sisense.png
 tags:
   - Analytics
   - Business Intelligence
@@ -20,57 +33,111 @@ modified: '2026-05-19'
 url: https://raw.githubusercontent.com/api-evangelist/sisense/refs/heads/main/apis.yml
 specificationVersion: '0.19'
 apis:
-  - aid: sisense:rest-api-v1
-    name: Sisense REST API v1
-    description: >-
-      The Sisense REST API v1 provides programmatic access to dashboards, users, groups, Elasticubes, data security
-      rules, and builds. It supports both extract-based Elasticube models and live data models. Authentication uses
-      Bearer tokens obtained via the login endpoint or from User Profiles settings.
-    humanURL: https://developer.sisense.com/guides/restApi/v1/
-    baseURL: https://your-sisense-host/api/v1
-    tags:
-      - Dashboards
-      - Users
-      - Groups
-      - Elasticubes
-      - Data Models
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://developer.sisense.com/guides/restApi/v1/
-      - type: OpenAPI
-        url: https://raw.githubusercontent.com/api-evangelist/sisense/refs/heads/main/openapi/sisense-rest-api-openapi.yml
-  - aid: sisense:rest-api-v2
-    name: Sisense REST API v2
-    description: >-
-      The Sisense REST API v2 provides access to Datamodels (the v2 replacement for Elasticubes), builds, and advanced
-      data model management capabilities including schema management, field configuration, and live data model
-      operations.
-    humanURL: https://developer.sisense.com/guides/restApi/v2/
-    baseURL: https://your-sisense-host/api/v2
-    tags:
-      - Data Models
-      - Builds
-      - Analytics
-    properties:
-      - type: Documentation
-        url: https://developer.sisense.com/guides/restApi/v2/
-  - aid: sisense:user-role-management-api
-    name: Sisense User and Role Management API
-    description: >-
-      The Sisense User and Role Management API (RBAC) enables administrators to manage users, roles, and permissions
-      programmatically. Available on select plans through contact with Customer Success Manager.
-    humanURL: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
-    baseURL: https://your-sisense-host/api/v1
-    tags:
-      - Users
-      - Roles
-      - RBAC
-      - Identity
-    properties:
-      - type: Documentation
-        url: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
+- aid: sisense:rest-api-v2
+  name: Sisense REST API v2
+  description: >-
+    The Sisense REST API v2 provides access to Datamodels (the v2 replacement for Elasticubes), builds,
+    and advanced data model management capabilities including schema management, field configuration,
+    and live data model operations.
+  humanURL: https://developer.sisense.com/guides/restApi/v2/
+  baseURL: https://your-sisense-host/api/v2
+  tags:
+  - Data Models
+  - Builds
+  - Analytics
+  properties:
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v2/
+- aid: sisense:user-role-management-api
+  name: Sisense User and Role Management API
+  description: >-
+    The Sisense User and Role Management API (RBAC) enables administrators to manage users, roles, and
+    permissions programmatically. Available on select plans through contact with Customer Success Manager.
+  humanURL: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Users
+  - Roles
+  - RBAC
+  - Identity
+  properties:
+  - type: Documentation
+    url: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
+- aid: sisense:sisense-authentication-api
+  name: Sisense Authentication API
+  description: Login and token management
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Authentication
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-authentication-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
+- aid: sisense:sisense-dashboards-api
+  name: Sisense Dashboards API
+  description: Create, read, update, and manage dashboards
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Dashboards
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-dashboards-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
+- aid: sisense:sisense-data-security-api
+  name: Sisense Data Security API
+  description: Configure row-level data security rules
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Data Security
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-data-security-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
+- aid: sisense:sisense-elasticubes-api
+  name: Sisense Elasticubes API
+  description: Manage Elasticube data models and builds
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Elasticubes
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-elasticubes-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
+- aid: sisense:sisense-groups-api
+  name: Sisense Groups API
+  description: Manage user groups for access control
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Groups
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-groups-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
+- aid: sisense:sisense-users-api
+  name: Sisense Users API
+  description: Manage Sisense users and user settings
+  humanURL: https://developer.sisense.com/guides/restApi/v1/
+  baseURL: https://your-sisense-host/api/v1
+  tags:
+  - Users
+  properties:
+  - type: OpenAPI
+    url: openapi/sisense-users-api-openapi.yml
+  - type: Documentation
+    url: https://developer.sisense.com/guides/restApi/v1/
 common:
+  - type: PostmanWorkspace
+    url: https://www.postman.com/kinlaneapi/sisense/overview
   - type: AgenticAccess
     url: agentic-access/sisense-agentic-access.yml
   - type: TrustCenter
