@@ -1,0 +1,161 @@
+{
+  "info": {
+    "_postman_id": "e50c8a55-cb41-47a4-9e29-a3f30718358f",
+    "name": "Sisense REST Authentication Elasticubes API",
+    "description": "The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.\n\nContact Support:\n Name: Sisense Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:55:02.000Z",
+    "updatedAt": "2026-07-28T02:55:02.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-e50c8a55-cb41-47a4-9e29-a3f30718358f"
+  },
+  "item": [
+    {
+      "name": "elasticubes",
+      "item": [
+        {
+          "name": "getElasticubes",
+          "item": [
+            {
+              "name": "List Elasticubes",
+              "id": "8acf6fe1-095f-4fa1-8265-d8a0fbf37825",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/elasticubes/getElasticubes",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "elasticubes",
+                    "getElasticubes"
+                  ]
+                },
+                "description": "Returns a list of all Elasticube data models."
+              },
+              "response": [
+                {
+                  "id": "56482f3e-ce97-45f8-8b89-c2bfe21e92ab",
+                  "name": "Elasticubes retrieved successfully",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/elasticubes/getElasticubes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "elasticubes",
+                        "getElasticubes"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"title\": \"<string>\",\n    \"status\": \"<string>\",\n    \"server\": \"<string>\",\n    \"address\": \"<string>\"\n  },\n  {\n    \"title\": \"<string>\",\n    \"status\": \"<string>\",\n    \"server\": \"<string>\",\n    \"address\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T02:55:03.000Z",
+                  "updatedAt": "2026-07-28T02:55:03.000Z",
+                  "uid": "35240-56482f3e-ce97-45f8-8b89-c2bfe21e92ab"
+                },
+                {
+                  "id": "1c662ae1-5330-4285-98c6-c1995372d2ab",
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/elasticubes/getElasticubes",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "elasticubes",
+                        "getElasticubes"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:03.000Z",
+                  "updatedAt": "2026-07-28T02:55:03.000Z",
+                  "uid": "35240-1c662ae1-5330-4285-98c6-c1995372d2ab"
+                }
+              ],
+              "createdAt": "2026-07-28T02:55:03.000Z",
+              "updatedAt": "2026-07-28T02:55:03.000Z",
+              "uid": "35240-8acf6fe1-095f-4fa1-8265-d8a0fbf37825"
+            }
+          ],
+          "id": "064f14b2-ba10-4f0c-b72a-295ed244f69a",
+          "createdAt": "2026-07-28T02:55:03.000Z",
+          "updatedAt": "2026-07-28T02:55:03.000Z",
+          "uid": "35240-064f14b2-ba10-4f0c-b72a-295ed244f69a"
+        }
+      ],
+      "id": "01cd022e-a86c-4390-a4b4-9087b0c9da1e",
+      "createdAt": "2026-07-28T02:55:03.000Z",
+      "updatedAt": "2026-07-28T02:55:03.000Z",
+      "uid": "35240-01cd022e-a86c-4390-a4b4-9087b0c9da1e"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "your-instance.sisense.com"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{host}}/api/v1"
+    }
+  ]
+}

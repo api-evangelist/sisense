@@ -1,0 +1,218 @@
+{
+  "info": {
+    "_postman_id": "a671b155-67f5-4035-aea0-a74e04d9e8bf",
+    "name": "Sisense REST Authentication API",
+    "description": "The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.\n\nContact Support:\n Name: Sisense Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:50.000Z",
+    "updatedAt": "2026-07-28T02:54:50.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-a671b155-67f5-4035-aea0-a74e04d9e8bf"
+  },
+  "item": [
+    {
+      "name": "authentication",
+      "item": [
+        {
+          "name": "login",
+          "item": [
+            {
+              "name": "Login and Get Token",
+              "id": "45f6b3d7-489f-44a8-8f3d-47fffb278dc5",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/x-www-form-urlencoded"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "urlencoded",
+                  "urlencoded": [
+                    {
+                      "description": "(Required) Sisense user email or username",
+                      "key": "username",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "(Required) Sisense user password",
+                      "key": "password",
+                      "value": "<string>"
+                    }
+                  ]
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/authentication/login",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "authentication",
+                    "login"
+                  ]
+                },
+                "description": "Authenticates a user with username and password, returning a Bearer token for use in subsequent API requests."
+              },
+              "response": [
+                {
+                  "id": "299ab61c-9e92-4245-b6c4-09eb7288ff46",
+                  "name": "Authentication successful, token returned",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                      },
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": "(Required) Sisense user email or username",
+                          "key": "username",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Sisense user password",
+                          "key": "password",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/authentication/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "authentication",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"token\": \"<string>\",\n  \"success\": \"<boolean>\",\n  \"id\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T02:54:51.000Z",
+                  "updatedAt": "2026-07-28T02:54:51.000Z",
+                  "uid": "35240-299ab61c-9e92-4245-b6c4-09eb7288ff46"
+                },
+                {
+                  "id": "761390b5-a939-473e-84c4-520a24d914c2",
+                  "name": "Invalid credentials",
+                  "originalRequest": {
+                    "method": "POST",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/x-www-form-urlencoded"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "urlencoded",
+                      "urlencoded": [
+                        {
+                          "description": "(Required) Sisense user email or username",
+                          "key": "username",
+                          "value": "<string>"
+                        },
+                        {
+                          "description": "(Required) Sisense user password",
+                          "key": "password",
+                          "value": "<string>"
+                        }
+                      ]
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/authentication/login",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "authentication",
+                        "login"
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:51.000Z",
+                  "updatedAt": "2026-07-28T02:54:51.000Z",
+                  "uid": "35240-761390b5-a939-473e-84c4-520a24d914c2"
+                }
+              ],
+              "createdAt": "2026-07-28T02:54:51.000Z",
+              "updatedAt": "2026-07-28T02:54:51.000Z",
+              "uid": "35240-45f6b3d7-489f-44a8-8f3d-47fffb278dc5"
+            }
+          ],
+          "id": "9ed4b434-d671-4089-af22-e99d6e865b81",
+          "createdAt": "2026-07-28T02:54:51.000Z",
+          "updatedAt": "2026-07-28T02:54:51.000Z",
+          "uid": "35240-9ed4b434-d671-4089-af22-e99d6e865b81"
+        }
+      ],
+      "id": "348e9b3c-b2de-4cb4-99b1-f0008b65a1f4",
+      "createdAt": "2026-07-28T02:54:51.000Z",
+      "updatedAt": "2026-07-28T02:54:51.000Z",
+      "uid": "35240-348e9b3c-b2de-4cb4-99b1-f0008b65a1f4"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "your-instance.sisense.com"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{host}}/api/v1"
+    }
+  ]
+}

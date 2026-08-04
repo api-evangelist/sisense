@@ -1,0 +1,744 @@
+{
+  "info": {
+    "_postman_id": "cda39875-e7a3-440b-9689-1c772aa1786d",
+    "name": "Sisense REST Authentication Users API",
+    "description": "The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.\n\nContact Support:\n Name: Sisense Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:55:04.000Z",
+    "updatedAt": "2026-07-28T02:55:04.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-cda39875-e7a3-440b-9689-1c772aa1786d"
+  },
+  "item": [
+    {
+      "name": "users",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get User",
+              "id": "7dceb93c-2f6f-4a0f-81e2-906b7cec282c",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/users/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "535f0a6b-366b-4c06-ad44-95f5e8e12d54",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) User identifier"
+                    }
+                  ]
+                },
+                "description": "Returns a specific user by ID."
+              },
+              "response": [
+                {
+                  "id": "f5ee1677-d6c5-40f2-b9f4-06e0a7bf86aa",
+                  "name": "User retrieved successfully",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"_id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"role\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\",\n  \"created\": \"<dateTime>\",\n  \"lastLogin\": \"<dateTime>\"\n}",
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-f5ee1677-d6c5-40f2-b9f4-06e0a7bf86aa"
+                },
+                {
+                  "id": "99e1ff65-102e-4edb-acd1-7b749c73fea5",
+                  "name": "User not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-99e1ff65-102e-4edb-acd1-7b749c73fea5"
+                }
+              ],
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-7dceb93c-2f6f-4a0f-81e2-906b7cec282c"
+            },
+            {
+              "name": "Update User",
+              "id": "0f7fb527-e8b0-4a30-8f12-751539307433",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "PATCH",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "ac23b47b-7865-446f-a9af-0c3cb4ad661b",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) User identifier"
+                    }
+                  ]
+                },
+                "description": "Updates specific fields of a user."
+              },
+              "response": [
+                {
+                  "id": "fc1858fd-e62a-495b-8960-b99f39cbe5ed",
+                  "name": "User updated successfully",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-fc1858fd-e62a-495b-8960-b99f39cbe5ed"
+                },
+                {
+                  "id": "e24ab9f2-3dcc-43e5-ab32-da798434edf3",
+                  "name": "User not found",
+                  "originalRequest": {
+                    "method": "PATCH",
+                    "header": [
+                      {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "body": {
+                      "mode": "raw",
+                      "raw": "{}",
+                      "options": {
+                        "raw": {
+                          "headerFamily": "json",
+                          "language": "json"
+                        }
+                      }
+                    },
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-e24ab9f2-3dcc-43e5-ab32-da798434edf3"
+                }
+              ],
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-0f7fb527-e8b0-4a30-8f12-751539307433"
+            },
+            {
+              "name": "Delete User",
+              "id": "321621f2-a212-4088-99d0-b58f0838247b",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/users/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "e283b45c-c365-4592-a340-f2a1aedb6e34",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) User identifier"
+                    }
+                  ]
+                },
+                "description": "Deletes a user from Sisense."
+              },
+              "response": [
+                {
+                  "id": "b25d9982-1586-4316-a88e-a14c881e04b4",
+                  "name": "User deleted successfully",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-b25d9982-1586-4316-a88e-a14c881e04b4"
+                },
+                {
+                  "id": "c271bc47-5f35-442c-a390-83e2e52c03c3",
+                  "name": "User not found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/users/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "users",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:55:05.000Z",
+                  "updatedAt": "2026-07-28T02:55:05.000Z",
+                  "uid": "35240-c271bc47-5f35-442c-a390-83e2e52c03c3"
+                }
+              ],
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-321621f2-a212-4088-99d0-b58f0838247b"
+            }
+          ],
+          "id": "c8f6f1d4-13ff-4814-be33-6f917996208c",
+          "createdAt": "2026-07-28T02:55:05.000Z",
+          "updatedAt": "2026-07-28T02:55:05.000Z",
+          "uid": "35240-c8f6f1d4-13ff-4814-be33-6f917996208c"
+        },
+        {
+          "name": "List Users",
+          "id": "1b484ae3-da2e-454c-aedd-763226df7d15",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/users?fields=<string>&limit=<integer>&skip=<integer>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ],
+              "query": [
+                {
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "key": "skip",
+                  "value": "<integer>"
+                }
+              ]
+            },
+            "description": "Returns a list of users in the Sisense system."
+          },
+          "response": [
+            {
+              "id": "c8133d12-7de1-47ea-b285-81cb8c9b0333",
+              "name": "Users retrieved successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/users?fields=<string>&limit=<integer>&skip=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"_id\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"role\": \"<string>\",\n    \"groups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"active\": \"<boolean>\",\n    \"created\": \"<dateTime>\",\n    \"lastLogin\": \"<dateTime>\"\n  },\n  {\n    \"_id\": \"<string>\",\n    \"email\": \"<string>\",\n    \"firstName\": \"<string>\",\n    \"lastName\": \"<string>\",\n    \"userName\": \"<string>\",\n    \"role\": \"<string>\",\n    \"groups\": [\n      \"<string>\",\n      \"<string>\"\n    ],\n    \"active\": \"<boolean>\",\n    \"created\": \"<dateTime>\",\n    \"lastLogin\": \"<dateTime>\"\n  }\n]",
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-c8133d12-7de1-47ea-b285-81cb8c9b0333"
+            },
+            {
+              "id": "b2009c56-f80f-40d1-9827-5aee4edb93f3",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/users?fields=<string>&limit=<integer>&skip=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ],
+                  "query": [
+                    {
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-b2009c56-f80f-40d1-9827-5aee4edb93f3"
+            }
+          ],
+          "createdAt": "2026-07-28T02:55:05.000Z",
+          "updatedAt": "2026-07-28T02:55:05.000Z",
+          "uid": "35240-1b484ae3-da2e-454c-aedd-763226df7d15"
+        },
+        {
+          "name": "Create User",
+          "id": "fed9aeb7-a389-414f-8417-7c75e684072e",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/users",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "users"
+              ]
+            },
+            "description": "Creates a new user in Sisense."
+          },
+          "response": [
+            {
+              "id": "a581e003-4175-45c7-84c2-2270d3468d47",
+              "name": "User created successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"_id\": \"<string>\",\n  \"email\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"userName\": \"<string>\",\n  \"role\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"active\": \"<boolean>\",\n  \"created\": \"<dateTime>\",\n  \"lastLogin\": \"<dateTime>\"\n}",
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-a581e003-4175-45c7-84c2-2270d3468d47"
+            },
+            {
+              "id": "697337a3-c30b-4a86-8561-5c6f83eefa6a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"email\": \"<string>\",\n  \"role\": \"<string>\",\n  \"firstName\": \"<string>\",\n  \"lastName\": \"<string>\",\n  \"groups\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/users",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "users"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:55:05.000Z",
+              "updatedAt": "2026-07-28T02:55:05.000Z",
+              "uid": "35240-697337a3-c30b-4a86-8561-5c6f83eefa6a"
+            }
+          ],
+          "createdAt": "2026-07-28T02:55:05.000Z",
+          "updatedAt": "2026-07-28T02:55:05.000Z",
+          "uid": "35240-fed9aeb7-a389-414f-8417-7c75e684072e"
+        }
+      ],
+      "id": "73c169e7-6944-4429-8b36-de5e00e97064",
+      "createdAt": "2026-07-28T02:55:05.000Z",
+      "updatedAt": "2026-07-28T02:55:05.000Z",
+      "uid": "35240-73c169e7-6944-4429-8b36-de5e00e97064"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "your-instance.sisense.com"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{host}}/api/v1"
+    }
+  ]
+}

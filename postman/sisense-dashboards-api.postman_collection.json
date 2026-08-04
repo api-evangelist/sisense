@@ -1,0 +1,840 @@
+{
+  "info": {
+    "_postman_id": "ea6e1bc7-da66-4019-9962-b3f02b9e8e5d",
+    "name": "Sisense REST Authentication Dashboards API",
+    "description": "The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.\n\nContact Support:\n Name: Sisense Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:51.000Z",
+    "updatedAt": "2026-07-28T02:54:51.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-ea6e1bc7-da66-4019-9962-b3f02b9e8e5d"
+  },
+  "item": [
+    {
+      "name": "dashboards",
+      "item": [
+        {
+          "name": "{id}",
+          "item": [
+            {
+              "name": "Get Dashboard",
+              "id": "1526f28c-dda3-4761-9aa8-cb834961968a",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/:id?fields=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    ":id"
+                  ],
+                  "query": [
+                    {
+                      "description": "Fields to include in response",
+                      "key": "fields",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "id": "a9552d70-4b49-4f4d-a331-77da84357f34",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) Dashboard identifier"
+                    }
+                  ]
+                },
+                "description": "Returns a specific dashboard by ID."
+              },
+              "response": [
+                {
+                  "id": "84025de7-176b-4621-b95f-1fddf1b5114c",
+                  "name": "Dashboard retrieved successfully",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:id?fields=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":id"
+                      ],
+                      "query": [
+                        {
+                          "description": "Fields to include in response",
+                          "key": "fields",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "{\n  \"oid\": \"<string>\",\n  \"title\": \"<string>\",\n  \"desc\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"folder\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"lastUpdated\": \"<dateTime>\",\n  \"type\": \"<string>\"\n}",
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-84025de7-176b-4621-b95f-1fddf1b5114c"
+                },
+                {
+                  "id": "24c78fbc-9a91-40bf-b12f-ded56e9f4b2d",
+                  "name": "Dashboard not found",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:id?fields=<string>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":id"
+                      ],
+                      "query": [
+                        {
+                          "description": "Fields to include in response",
+                          "key": "fields",
+                          "value": "<string>"
+                        }
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-24c78fbc-9a91-40bf-b12f-ded56e9f4b2d"
+                }
+              ],
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-1526f28c-dda3-4761-9aa8-cb834961968a"
+            },
+            {
+              "name": "Delete Dashboard",
+              "id": "b3d9488d-1c86-43fd-b4c2-e5e97bf1c8b8",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "DELETE",
+                "header": [],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/:id",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    ":id"
+                  ],
+                  "variable": [
+                    {
+                      "id": "d2f21bc3-9cbe-48c3-9368-923f902898af",
+                      "key": "id",
+                      "value": "<string>",
+                      "description": "(Required) Dashboard identifier"
+                    }
+                  ]
+                },
+                "description": "Deletes a dashboard by ID."
+              },
+              "response": [
+                {
+                  "id": "bdebac95-2e91-4611-b5dd-5adc4dc30e0c",
+                  "name": "Dashboard deleted successfully",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-bdebac95-2e91-4611-b5dd-5adc4dc30e0c"
+                },
+                {
+                  "id": "45ac977c-ccbb-4b33-9b5a-83613f39f712",
+                  "name": "Dashboard not found",
+                  "originalRequest": {
+                    "method": "DELETE",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/:id",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        ":id"
+                      ],
+                      "variable": [
+                        {
+                          "key": "id"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Not Found",
+                  "code": 404,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-45ac977c-ccbb-4b33-9b5a-83613f39f712"
+                }
+              ],
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-b3d9488d-1c86-43fd-b4c2-e5e97bf1c8b8"
+            }
+          ],
+          "id": "4e7a1e7a-f6fd-4be6-95a2-0a68a3927e6b",
+          "createdAt": "2026-07-28T02:54:52.000Z",
+          "updatedAt": "2026-07-28T02:54:52.000Z",
+          "uid": "35240-4e7a1e7a-f6fd-4be6-95a2-0a68a3927e6b"
+        },
+        {
+          "name": "admin",
+          "item": [
+            {
+              "name": "List All Dashboards (Admin)",
+              "id": "fea5b683-a40e-49c3-b1ed-3d36ecd22552",
+              "protocolProfileBehavior": {
+                "disableBodyPruning": true
+              },
+              "request": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards/admin?limit=<integer>&skip=<integer>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards",
+                    "admin"
+                  ],
+                  "query": [
+                    {
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "key": "skip",
+                      "value": "<integer>"
+                    }
+                  ]
+                },
+                "description": "Admin endpoint that returns all dashboards across all users. Requires admin privileges."
+              },
+              "response": [
+                {
+                  "id": "ce5ee460-f9ae-4b16-b84d-b86999339296",
+                  "name": "All dashboards retrieved successfully",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "key": "Accept",
+                        "value": "application/json"
+                      },
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/admin?limit=<integer>&skip=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        "admin"
+                      ],
+                      "query": [
+                        {
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "skip",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "OK",
+                  "code": 200,
+                  "_postman_previewlanguage": "json",
+                  "header": [
+                    {
+                      "key": "Content-Type",
+                      "value": "application/json"
+                    }
+                  ],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": "[\n  {\n    \"oid\": \"<string>\",\n    \"title\": \"<string>\",\n    \"desc\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"type\": \"<string>\"\n  },\n  {\n    \"oid\": \"<string>\",\n    \"title\": \"<string>\",\n    \"desc\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"type\": \"<string>\"\n  }\n]",
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-ce5ee460-f9ae-4b16-b84d-b86999339296"
+                },
+                {
+                  "id": "10da929c-0ac3-4142-b9fc-bbb345021dcb",
+                  "name": "Unauthorized",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/admin?limit=<integer>&skip=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        "admin"
+                      ],
+                      "query": [
+                        {
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "skip",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Unauthorized",
+                  "code": 401,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-10da929c-0ac3-4142-b9fc-bbb345021dcb"
+                },
+                {
+                  "id": "078d2a0f-dbe5-4a7b-acda-dd69630c8175",
+                  "name": "Forbidden - admin privileges required",
+                  "originalRequest": {
+                    "method": "GET",
+                    "header": [
+                      {
+                        "description": "Added as a part of security scheme: bearer",
+                        "key": "Authorization",
+                        "value": "Bearer <token>"
+                      }
+                    ],
+                    "url": {
+                      "raw": "{{baseUrl}}/dashboards/admin?limit=<integer>&skip=<integer>",
+                      "host": [
+                        "{{baseUrl}}"
+                      ],
+                      "path": [
+                        "dashboards",
+                        "admin"
+                      ],
+                      "query": [
+                        {
+                          "key": "limit",
+                          "value": "<integer>"
+                        },
+                        {
+                          "key": "skip",
+                          "value": "<integer>"
+                        }
+                      ]
+                    }
+                  },
+                  "status": "Forbidden",
+                  "code": 403,
+                  "_postman_previewlanguage": "text",
+                  "header": [],
+                  "cookie": [],
+                  "responseTime": null,
+                  "body": null,
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-078d2a0f-dbe5-4a7b-acda-dd69630c8175"
+                }
+              ],
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-fea5b683-a40e-49c3-b1ed-3d36ecd22552"
+            }
+          ],
+          "id": "edb6f610-80f4-4abc-a771-2c8067660c7f",
+          "createdAt": "2026-07-28T02:54:52.000Z",
+          "updatedAt": "2026-07-28T02:54:52.000Z",
+          "uid": "35240-edb6f610-80f4-4abc-a771-2c8067660c7f"
+        },
+        {
+          "name": "List Dashboards",
+          "id": "8ab3e5e6-1d18-40dd-a3c2-228976868f50",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "GET",
+            "header": [
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "url": {
+              "raw": "{{baseUrl}}/dashboards?fields=<string>&sort=<string>&limit=<integer>&skip=<integer>&expand=<string>",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboards"
+              ],
+              "query": [
+                {
+                  "description": "Comma-separated list of fields to include in response",
+                  "key": "fields",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Field to sort by (prefix with - for descending)",
+                  "key": "sort",
+                  "value": "<string>"
+                },
+                {
+                  "description": "Maximum number of results to return",
+                  "key": "limit",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Number of results to skip for pagination",
+                  "key": "skip",
+                  "value": "<integer>"
+                },
+                {
+                  "description": "Replace foreign key IDs with full entity objects",
+                  "key": "expand",
+                  "value": "<string>"
+                }
+              ]
+            },
+            "description": "Returns a list of dashboards accessible to the authenticated user. Supports filtering by various attributes."
+          },
+          "response": [
+            {
+              "id": "8c5c856c-761f-4026-b793-e111c0e606ad",
+              "name": "Dashboards retrieved successfully",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards?fields=<string>&sort=<string>&limit=<integer>&skip=<integer>&expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to include in response",
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Field to sort by (prefix with - for descending)",
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of results to return",
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of results to skip for pagination",
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Replace foreign key IDs with full entity objects",
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "[\n  {\n    \"oid\": \"<string>\",\n    \"title\": \"<string>\",\n    \"desc\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"type\": \"<string>\"\n  },\n  {\n    \"oid\": \"<string>\",\n    \"title\": \"<string>\",\n    \"desc\": \"<string>\",\n    \"owner\": \"<string>\",\n    \"folder\": \"<string>\",\n    \"created\": \"<dateTime>\",\n    \"lastUpdated\": \"<dateTime>\",\n    \"type\": \"<string>\"\n  }\n]",
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-8c5c856c-761f-4026-b793-e111c0e606ad"
+            },
+            {
+              "id": "7dd0b116-36fc-4373-a75b-80aac6ea27c2",
+              "name": "Unauthorized - invalid or missing token",
+              "originalRequest": {
+                "method": "GET",
+                "header": [
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards?fields=<string>&sort=<string>&limit=<integer>&skip=<integer>&expand=<string>",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ],
+                  "query": [
+                    {
+                      "description": "Comma-separated list of fields to include in response",
+                      "key": "fields",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Field to sort by (prefix with - for descending)",
+                      "key": "sort",
+                      "value": "<string>"
+                    },
+                    {
+                      "description": "Maximum number of results to return",
+                      "key": "limit",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Number of results to skip for pagination",
+                      "key": "skip",
+                      "value": "<integer>"
+                    },
+                    {
+                      "description": "Replace foreign key IDs with full entity objects",
+                      "key": "expand",
+                      "value": "<string>"
+                    }
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-7dd0b116-36fc-4373-a75b-80aac6ea27c2"
+            }
+          ],
+          "createdAt": "2026-07-28T02:54:52.000Z",
+          "updatedAt": "2026-07-28T02:54:52.000Z",
+          "uid": "35240-8ab3e5e6-1d18-40dd-a3c2-228976868f50"
+        },
+        {
+          "name": "Create Dashboard",
+          "id": "cff5ba7d-97f2-4822-8dca-f52241afc173",
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          },
+          "request": {
+            "method": "POST",
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              },
+              {
+                "key": "Accept",
+                "value": "application/json"
+              }
+            ],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n  \"title\": \"<string>\",\n  \"desc\": \"<string>\"\n}",
+              "options": {
+                "raw": {
+                  "headerFamily": "json",
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{baseUrl}}/dashboards",
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "path": [
+                "dashboards"
+              ]
+            },
+            "description": "Creates a new dashboard in Sisense."
+          },
+          "response": [
+            {
+              "id": "6937ce9f-a64f-4457-8fdc-4a761fe05d62",
+              "name": "Dashboard created successfully",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "key": "Accept",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"desc\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "_postman_previewlanguage": "json",
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "application/json"
+                }
+              ],
+              "cookie": [],
+              "responseTime": null,
+              "body": "{\n  \"oid\": \"<string>\",\n  \"title\": \"<string>\",\n  \"desc\": \"<string>\",\n  \"owner\": \"<string>\",\n  \"folder\": \"<string>\",\n  \"created\": \"<dateTime>\",\n  \"lastUpdated\": \"<dateTime>\",\n  \"type\": \"<string>\"\n}",
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-6937ce9f-a64f-4457-8fdc-4a761fe05d62"
+            },
+            {
+              "id": "2aa3f92f-7a7f-4aa9-a441-d86ed238c21a",
+              "name": "Unauthorized",
+              "originalRequest": {
+                "method": "POST",
+                "header": [
+                  {
+                    "key": "Content-Type",
+                    "value": "application/json"
+                  },
+                  {
+                    "description": "Added as a part of security scheme: bearer",
+                    "key": "Authorization",
+                    "value": "Bearer <token>"
+                  }
+                ],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n  \"title\": \"<string>\",\n  \"desc\": \"<string>\"\n}",
+                  "options": {
+                    "raw": {
+                      "headerFamily": "json",
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "{{baseUrl}}/dashboards",
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "path": [
+                    "dashboards"
+                  ]
+                }
+              },
+              "status": "Unauthorized",
+              "code": 401,
+              "_postman_previewlanguage": "text",
+              "header": [],
+              "cookie": [],
+              "responseTime": null,
+              "body": null,
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-2aa3f92f-7a7f-4aa9-a441-d86ed238c21a"
+            }
+          ],
+          "createdAt": "2026-07-28T02:54:52.000Z",
+          "updatedAt": "2026-07-28T02:54:52.000Z",
+          "uid": "35240-cff5ba7d-97f2-4822-8dca-f52241afc173"
+        }
+      ],
+      "id": "be607d29-7fc3-4d53-97b4-c42d0ae87a0d",
+      "createdAt": "2026-07-28T02:54:52.000Z",
+      "updatedAt": "2026-07-28T02:54:52.000Z",
+      "uid": "35240-be607d29-7fc3-4d53-97b4-c42d0ae87a0d"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "your-instance.sisense.com"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{host}}/api/v1"
+    }
+  ]
+}

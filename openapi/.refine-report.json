@@ -1,0 +1,24 @@
+{
+  "provider": "sisense",
+  "sources": [
+    "sisense-authentication-api-openapi.yml",
+    "sisense-dashboards-api-openapi.yml",
+    "sisense-data-security-api-openapi.yml",
+    "sisense-elasticubes-api-openapi.yml",
+    "sisense-groups-api-openapi.yml",
+    "sisense-users-api-openapi.yml"
+  ],
+  "outputs": [
+    "sisense-authentication-api-openapi.yml",
+    "sisense-dashboards-api-openapi.yml",
+    "sisense-data-security-api-openapi.yml",
+    "sisense-elasticubes-api-openapi.yml",
+    "sisense-groups-api-openapi.yml",
+    "sisense-users-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}

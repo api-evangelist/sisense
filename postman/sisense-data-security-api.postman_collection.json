@@ -1,0 +1,389 @@
+{
+  "info": {
+    "_postman_id": "74af75b3-97d8-42ef-88a8-4c01296d0e86",
+    "name": "Sisense REST Authentication Data Security API",
+    "description": "The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.\n\nContact Support:\n Name: Sisense Support",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "createdAt": "2026-07-28T02:54:52.000Z",
+    "updatedAt": "2026-07-28T02:54:52.000Z",
+    "lastUpdatedBy": "35240",
+    "uid": "35240-74af75b3-97d8-42ef-88a8-4c01296d0e86"
+  },
+  "item": [
+    {
+      "name": "elasticubes",
+      "item": [
+        {
+          "name": "{server}",
+          "item": [
+            {
+              "name": "{elasticube}",
+              "item": [
+                {
+                  "name": "datasecurity",
+                  "item": [
+                    {
+                      "name": "Get Data Security Rules",
+                      "id": "63fec6c4-d3be-4792-9174-4f93872b106d",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "GET",
+                        "header": [
+                          {
+                            "key": "Accept",
+                            "value": "application/json"
+                          }
+                        ],
+                        "url": {
+                          "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "elasticubes",
+                            ":server",
+                            ":elasticube",
+                            "datasecurity"
+                          ],
+                          "variable": [
+                            {
+                              "id": "1f0e0b4c-0050-4e38-813d-a8abb65e2aa5",
+                              "key": "server",
+                              "value": "<string>",
+                              "description": "(Required) Server name (use 'LocalHost' for single-node)"
+                            },
+                            {
+                              "id": "1b2c7eaf-1a8d-48c7-bcbd-f1b5760de510",
+                              "key": "elasticube",
+                              "value": "<string>",
+                              "description": "(Required) Elasticube title"
+                            }
+                          ]
+                        },
+                        "description": "Returns all data security rules for a specific Elasticube."
+                      },
+                      "response": [
+                        {
+                          "id": "35fb59fd-e950-4c6b-81e5-b5e7a72aa5bc",
+                          "name": "Data security rules retrieved successfully",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "key": "Accept",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "elasticubes",
+                                ":server",
+                                ":elasticube",
+                                "datasecurity"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "server"
+                                },
+                                {
+                                  "key": "elasticube"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "json",
+                          "header": [
+                            {
+                              "key": "Content-Type",
+                              "value": "application/json"
+                            }
+                          ],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": "[\n  {\n    \"column\": \"<string>\",\n    \"table\": \"<string>\",\n    \"datatype\": \"<string>\",\n    \"exclusionary\": \"<boolean>\"\n  },\n  {\n    \"column\": \"<string>\",\n    \"table\": \"<string>\",\n    \"datatype\": \"<string>\",\n    \"exclusionary\": \"<boolean>\"\n  }\n]",
+                          "createdAt": "2026-07-28T02:54:53.000Z",
+                          "updatedAt": "2026-07-28T02:54:53.000Z",
+                          "uid": "35240-35fb59fd-e950-4c6b-81e5-b5e7a72aa5bc"
+                        },
+                        {
+                          "id": "de9c569e-9dad-4902-996f-72358a3e0d0c",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "GET",
+                            "header": [
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "url": {
+                              "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "elasticubes",
+                                ":server",
+                                ":elasticube",
+                                "datasecurity"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "server"
+                                },
+                                {
+                                  "key": "elasticube"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:53.000Z",
+                          "updatedAt": "2026-07-28T02:54:53.000Z",
+                          "uid": "35240-de9c569e-9dad-4902-996f-72358a3e0d0c"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:52.000Z",
+                      "updatedAt": "2026-07-28T02:54:52.000Z",
+                      "uid": "35240-63fec6c4-d3be-4792-9174-4f93872b106d"
+                    },
+                    {
+                      "name": "Create Data Security Rule",
+                      "id": "51961cd2-1dd0-49f6-be97-cc3124267970",
+                      "protocolProfileBehavior": {
+                        "disableBodyPruning": true
+                      },
+                      "request": {
+                        "method": "POST",
+                        "header": [
+                          {
+                            "key": "Content-Type",
+                            "value": "application/json"
+                          }
+                        ],
+                        "body": {
+                          "mode": "raw",
+                          "raw": "{\n  \"column\": \"<string>\",\n  \"table\": \"<string>\",\n  \"datatype\": \"<string>\",\n  \"exclusionary\": \"<boolean>\"\n}",
+                          "options": {
+                            "raw": {
+                              "headerFamily": "json",
+                              "language": "json"
+                            }
+                          }
+                        },
+                        "url": {
+                          "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                          "host": [
+                            "{{baseUrl}}"
+                          ],
+                          "path": [
+                            "elasticubes",
+                            ":server",
+                            ":elasticube",
+                            "datasecurity"
+                          ],
+                          "variable": [
+                            {
+                              "id": "4f3694b3-91a3-4278-9e91-a9cfe9d2dce8",
+                              "key": "server",
+                              "value": "<string>",
+                              "description": "(Required) Server name"
+                            },
+                            {
+                              "id": "a1fddbd2-69e4-4a98-9e77-f923e1eaae4e",
+                              "key": "elasticube",
+                              "value": "<string>",
+                              "description": "(Required) Elasticube title"
+                            }
+                          ]
+                        },
+                        "description": "Creates a data security rule for an Elasticube."
+                      },
+                      "response": [
+                        {
+                          "id": "f5758ca6-00d4-4620-bd8c-9b44d4ad982f",
+                          "name": "Data security rule created successfully",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"column\": \"<string>\",\n  \"table\": \"<string>\",\n  \"datatype\": \"<string>\",\n  \"exclusionary\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "elasticubes",
+                                ":server",
+                                ":elasticube",
+                                "datasecurity"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "server"
+                                },
+                                {
+                                  "key": "elasticube"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "OK",
+                          "code": 200,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:53.000Z",
+                          "updatedAt": "2026-07-28T02:54:53.000Z",
+                          "uid": "35240-f5758ca6-00d4-4620-bd8c-9b44d4ad982f"
+                        },
+                        {
+                          "id": "042969f4-b3e5-4ab4-9aee-c9c19efd43c9",
+                          "name": "Unauthorized",
+                          "originalRequest": {
+                            "method": "POST",
+                            "header": [
+                              {
+                                "key": "Content-Type",
+                                "value": "application/json"
+                              },
+                              {
+                                "description": "Added as a part of security scheme: bearer",
+                                "key": "Authorization",
+                                "value": "Bearer <token>"
+                              }
+                            ],
+                            "body": {
+                              "mode": "raw",
+                              "raw": "{\n  \"column\": \"<string>\",\n  \"table\": \"<string>\",\n  \"datatype\": \"<string>\",\n  \"exclusionary\": \"<boolean>\"\n}",
+                              "options": {
+                                "raw": {
+                                  "headerFamily": "json",
+                                  "language": "json"
+                                }
+                              }
+                            },
+                            "url": {
+                              "raw": "{{baseUrl}}/elasticubes/:server/:elasticube/datasecurity",
+                              "host": [
+                                "{{baseUrl}}"
+                              ],
+                              "path": [
+                                "elasticubes",
+                                ":server",
+                                ":elasticube",
+                                "datasecurity"
+                              ],
+                              "variable": [
+                                {
+                                  "key": "server"
+                                },
+                                {
+                                  "key": "elasticube"
+                                }
+                              ]
+                            }
+                          },
+                          "status": "Unauthorized",
+                          "code": 401,
+                          "_postman_previewlanguage": "text",
+                          "header": [],
+                          "cookie": [],
+                          "responseTime": null,
+                          "body": null,
+                          "createdAt": "2026-07-28T02:54:53.000Z",
+                          "updatedAt": "2026-07-28T02:54:53.000Z",
+                          "uid": "35240-042969f4-b3e5-4ab4-9aee-c9c19efd43c9"
+                        }
+                      ],
+                      "createdAt": "2026-07-28T02:54:52.000Z",
+                      "updatedAt": "2026-07-28T02:54:52.000Z",
+                      "uid": "35240-51961cd2-1dd0-49f6-be97-cc3124267970"
+                    }
+                  ],
+                  "id": "affb0568-ab0c-41ee-b537-fbb3c005d2ef",
+                  "createdAt": "2026-07-28T02:54:52.000Z",
+                  "updatedAt": "2026-07-28T02:54:52.000Z",
+                  "uid": "35240-affb0568-ab0c-41ee-b537-fbb3c005d2ef"
+                }
+              ],
+              "id": "8e662ba7-4ff9-4875-b978-1acb0c5a42c1",
+              "createdAt": "2026-07-28T02:54:52.000Z",
+              "updatedAt": "2026-07-28T02:54:52.000Z",
+              "uid": "35240-8e662ba7-4ff9-4875-b978-1acb0c5a42c1"
+            }
+          ],
+          "id": "92883f28-de72-4182-b27f-9b4b30c337ef",
+          "createdAt": "2026-07-28T02:54:52.000Z",
+          "updatedAt": "2026-07-28T02:54:52.000Z",
+          "uid": "35240-92883f28-de72-4182-b27f-9b4b30c337ef"
+        }
+      ],
+      "id": "a9350439-c2b0-4ff6-8038-987200a42e9f",
+      "createdAt": "2026-07-28T02:54:52.000Z",
+      "updatedAt": "2026-07-28T02:54:52.000Z",
+      "uid": "35240-a9350439-c2b0-4ff6-8038-987200a42e9f"
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "bearer": [
+      {
+        "key": "token",
+        "value": "{{bearerToken}}",
+        "type": "string"
+      }
+    ]
+  },
+  "variable": [
+    {
+      "key": "host",
+      "value": "your-instance.sisense.com"
+    },
+    {
+      "key": "baseUrl",
+      "value": "https://{{host}}/api/v1"
+    }
+  ]
+}
