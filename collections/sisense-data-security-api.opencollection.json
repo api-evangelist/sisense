@@ -1,0 +1,78 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Sisense REST Authentication Data Security API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Data Security",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get Data Security Rules",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/api/v1/elasticubes/:server/:elasticube/datasecurity",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "path",
+                "description": "Server name (use 'LocalHost' for single-node)"
+              },
+              {
+                "name": "elasticube",
+                "value": "",
+                "type": "path",
+                "description": "Elasticube title"
+              }
+            ]
+          },
+          "docs": "Returns all data security rules for a specific Elasticube."
+        },
+        {
+          "info": {
+            "name": "Create Data Security Rule",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://{host}/api/v1/elasticubes/:server/:elasticube/datasecurity",
+            "params": [
+              {
+                "name": "server",
+                "value": "",
+                "type": "path",
+                "description": "Server name"
+              },
+              {
+                "name": "elasticube",
+                "value": "",
+                "type": "path",
+                "description": "Elasticube title"
+              }
+            ],
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a data security rule for an Elasticube."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

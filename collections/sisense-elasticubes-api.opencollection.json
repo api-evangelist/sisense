@@ -1,0 +1,35 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Sisense REST Authentication Elasticubes API",
+    "version": "v1"
+  },
+  "request": {
+    "auth": {
+      "type": "bearer",
+      "token": "{{bearerToken}}"
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Elasticubes",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "List Elasticubes",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://{host}/api/v1/elasticubes/getElasticubes"
+          },
+          "docs": "Returns a list of all Elasticube data models."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
