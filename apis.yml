@@ -56,6 +56,11 @@ apis:
   humanURL: https://dtdocs.sisense.com/article/user-and-role-management-api-rbac
   baseURL: https://your-sisense-host/api/v1
   tags:
+  - User
+  - Roles
+  - RBAC
+  - Identity
+  tags_raw:
   - Users
   - Roles
   - RBAC
@@ -117,6 +122,8 @@ apis:
   humanURL: https://developer.sisense.com/guides/restApi/v1/
   baseURL: https://your-sisense-host/api/v1
   tags:
+  - Group
+  tags_raw:
   - Groups
   properties:
   - type: OpenAPI
@@ -129,6 +136,8 @@ apis:
   humanURL: https://developer.sisense.com/guides/restApi/v1/
   baseURL: https://your-sisense-host/api/v1
   tags:
+  - User
+  tags_raw:
   - Users
   properties:
   - type: OpenAPI
