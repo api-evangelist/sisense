@@ -6,6 +6,18 @@ description: >-
   users, groups, data security rules, and builds. The platform supports both extract-based and live data model
   architectures with comprehensive programmatic administration capabilities.
 type: Index
+deliveryModel:
+  model: saas
+  open_source: false
+  commercial: true
+  callable_host: false
+  label: Hosted service · you call their endpoint
+  confidence: medium
+  source:
+  - openapi
+  - pricing
+  generated: '2026-08-28'
+  method: derived
 accessModel:
   pricing: paid
   onboarding: self-serve
