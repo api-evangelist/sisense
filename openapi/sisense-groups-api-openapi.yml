@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Sisense REST Authentication Groups API
+  title: Sisense REST Groups API
   description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
   version: v1
   contact:
@@ -94,6 +94,17 @@ paths:
           description: Group not found
 components:
   schemas:
+    CreateGroupRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Group name
+        description:
+          type: string
+          description: Group description
     Group:
       type: object
       properties:
@@ -109,17 +120,6 @@ components:
         created:
           type: string
           format: date-time
-    CreateGroupRequest:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-          description: Group name
-        description:
-          type: string
-          description: Group description
   securitySchemes:
     bearerAuth:
       type: http

@@ -1,12 +1,7 @@
 {
   "provider": "sisense",
   "sources": [
-    "sisense-authentication-api-openapi.yml",
-    "sisense-dashboards-api-openapi.yml",
-    "sisense-data-security-api-openapi.yml",
-    "sisense-elasticubes-api-openapi.yml",
-    "sisense-groups-api-openapi.yml",
-    "sisense-users-api-openapi.yml"
+    "_original/sisense-rest-api-openapi.yml"
   ],
   "outputs": [
     "sisense-authentication-api-openapi.yml",
@@ -19,6 +14,17 @@
   "archived": [],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "sisense-rest-api-openapi.yml: upgraded openapi 3.1.0 -> OpenAPI 3.2.0",
+    "apis.yml register: already-registered"
+  ],
+  "skipped": [
+    "sisense-authentication-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sisense-dashboards-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sisense-data-security-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sisense-elasticubes-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sisense-groups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "sisense-users-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }

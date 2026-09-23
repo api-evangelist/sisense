@@ -1,6 +1,6 @@
-openapi: 3.1.0
+openapi: 3.2.0
 info:
-  title: Sisense REST Authentication Users API
+  title: Sisense REST Users API
   description: The Sisense REST API provides programmatic access to the Sisense business intelligence platform, enabling management of dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The API uses Bearer token authentication obtained via the login endpoint or User Profiles settings. Endpoints follow RESTful conventions with standard HTTP methods for CRUD operations.
   version: v1
   contact:
@@ -145,6 +145,29 @@ paths:
           description: User not found
 components:
   schemas:
+    CreateUserRequest:
+      type: object
+      required:
+      - email
+      - role
+      properties:
+        email:
+          type: string
+          description: User email address
+        firstName:
+          type: string
+          description: User first name
+        lastName:
+          type: string
+          description: User last name
+        role:
+          type: string
+          description: User role assignment
+        groups:
+          type: array
+          items:
+            type: string
+          description: Groups to assign the user to
     User:
       type: object
       properties:
@@ -180,29 +203,6 @@ components:
         lastLogin:
           type: string
           format: date-time
-    CreateUserRequest:
-      type: object
-      required:
-      - email
-      - role
-      properties:
-        email:
-          type: string
-          description: User email address
-        firstName:
-          type: string
-          description: User first name
-        lastName:
-          type: string
-          description: User last name
-        role:
-          type: string
-          description: User role assignment
-        groups:
-          type: array
-          items:
-            type: string
-          description: Groups to assign the user to
   securitySchemes:
     bearerAuth:
       type: http
