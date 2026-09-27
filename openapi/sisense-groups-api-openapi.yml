@@ -94,17 +94,6 @@ paths:
           description: Group not found
 components:
   schemas:
-    CreateGroupRequest:
-      type: object
-      required:
-      - name
-      properties:
-        name:
-          type: string
-          description: Group name
-        description:
-          type: string
-          description: Group description
     Group:
       type: object
       properties:
@@ -120,6 +109,17 @@ components:
         created:
           type: string
           format: date-time
+    CreateGroupRequest:
+      type: object
+      required:
+      - name
+      properties:
+        name:
+          type: string
+          description: Group name
+        description:
+          type: string
+          description: Group description
   securitySchemes:
     bearerAuth:
       type: http

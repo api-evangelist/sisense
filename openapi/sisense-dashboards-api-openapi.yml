@@ -173,17 +173,6 @@ paths:
           description: Forbidden - admin privileges required
 components:
   schemas:
-    CreateDashboardRequest:
-      type: object
-      required:
-      - title
-      properties:
-        title:
-          type: string
-          description: Dashboard title
-        desc:
-          type: string
-          description: Dashboard description
     Dashboard:
       type: object
       properties:
@@ -218,6 +207,17 @@ components:
         type:
           type: string
           description: Dashboard type identifier
+    CreateDashboardRequest:
+      type: object
+      required:
+      - title
+      properties:
+        title:
+          type: string
+          description: Dashboard title
+        desc:
+          type: string
+          description: Dashboard description
   securitySchemes:
     bearerAuth:
       type: http
