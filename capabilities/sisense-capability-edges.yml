@@ -1,0 +1,34 @@
+slug: sisense
+provider: Sisense
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Software & Technology
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 2
+edges:
+- tag: Dashboards
+  spec_file: sisense-dashboards-api-openapi.yml
+  capability_id: BC-610.50
+  capability_id_l1: BC-610
+  capability_name: Analytics & BI Management
+  confidence: 0.88
+  evidence: '"List Dashboards", "Create Dashboard", schema CreateDashboardRequest; platform "enabling
+    management of dashboards, data models (Elasticubes and live models)"'
+  reason: CRUD over BI dashboards on a business intelligence platform directly realises Analytics & BI
+    delivery.
+- tag: Users
+  spec_file: sisense-users-api-openapi.yml
+  capability_id: BC-620.20
+  capability_id_l1: BC-620
+  capability_name: Identity & Access Management
+  confidence: 0.72
+  evidence: '"Create User", "Update User", "Delete User"; schema CreateUserRequest'
+  reason: Platform user account lifecycle administration (joiners-movers-leavers for the BI tool) is Identity
+    & Access Management, not HR employee records.
