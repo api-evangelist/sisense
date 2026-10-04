@@ -145,29 +145,6 @@ paths:
           description: User not found
 components:
   schemas:
-    CreateUserRequest:
-      type: object
-      required:
-      - email
-      - role
-      properties:
-        email:
-          type: string
-          description: User email address
-        firstName:
-          type: string
-          description: User first name
-        lastName:
-          type: string
-          description: User last name
-        role:
-          type: string
-          description: User role assignment
-        groups:
-          type: array
-          items:
-            type: string
-          description: Groups to assign the user to
     User:
       type: object
       properties:
@@ -203,6 +180,29 @@ components:
         lastLogin:
           type: string
           format: date-time
+    CreateUserRequest:
+      type: object
+      required:
+      - email
+      - role
+      properties:
+        email:
+          type: string
+          description: User email address
+        firstName:
+          type: string
+          description: User first name
+        lastName:
+          type: string
+          description: User last name
+        role:
+          type: string
+          description: User role assignment
+        groups:
+          type: array
+          items:
+            type: string
+          description: Groups to assign the user to
   securitySchemes:
     bearerAuth:
       type: http
