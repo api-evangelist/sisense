@@ -11,6 +11,8 @@ checked:
 - https://www.indexventures.com/companies/
 - https://www.sequoiacap.com/our-companies/
 - https://www.sequoiacap.com/sitemap.xml
+- adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+- adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
 marketplace_apps: []
 edges:
 - partner_name: AWS Marketplace
@@ -29,30 +31,6 @@ edges:
   seller_name: Sisense
   detected_by: sweep-cloud-marketplaces.py
   detected: '2026-10-13'
-- partner_name: Okta (own)
-  partner: okta
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://www.okta.com/integrations/periscopedata/
-  mirror_of: okta/integrations/okta-integration-edges.yml
-  apps:
-  - Sisense for Cloud Data Teams
-  listing_count: 1
-  detected: '2026-10-14'
-  detected_by: mirror-platform-listings.py
-  category: Single Sign-On
-  badges:
-  - OKTA_VERIFIED
-  features:
-  - CREATE
-  - DEACTIVATE
-  - SAML
-  - UPDATE
 - partner_name: Zapier
   partner: zapier
   partner_match: aggregator
@@ -78,23 +56,6 @@ edges:
     builder: unknown (not in the directory record)
   detected_by: sweep-workflow-automation.py
   first_seen: '2026-10-15'
-- partner_name: Slack (own)
-  partner: slack
-  partner_match: mirror
-  mirror_match: domain
-  type: marketplace
-  relationship: platform-app
-  direction: third-party
-  channel: partner-built
-  marketplace: own
-  evidence: https://slack.com/marketplace/A4C6CSAFM-sisense-for-cloud-data-teams
-  mirror_of: slack/integrations/slack-integration-edges.yml
-  apps:
-  - Sisense for Cloud Data Teams
-  listing_count: 1
-  detected: '2026-10-18'
-  detected_by: mirror-platform-listings.py
-  category: Slack app
 - partner_name: Battery Ventures
   partner: battery-ventures
   partner_match: register
@@ -122,5 +83,80 @@ edges:
     status: Active
   detected_by: sweep-vc-portfolios.py
   first_seen: '2026-10-21'
+- partner_name: Okta (own)
+  partner: okta
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://www.okta.com/integrations/periscopedata/
+  mirror_of: okta/integrations/okta-integration-edges.yml
+  apps:
+  - Sisense for Cloud Data Teams
+  listing_count: 1
+  detected: '2026-10-14'
+  detected_by: mirror-platform-listings.py
+  category: Single Sign-On
+  badges:
+  - OKTA_VERIFIED
+  features:
+  - CREATE
+  - DEACTIVATE
+  - SAML
+  - UPDATE
+- partner_name: Slack (own)
+  partner: slack
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://slack.com/marketplace/A4C6CSAFM-sisense-for-cloud-data-teams
+  mirror_of: slack/integrations/slack-integration-edges.yml
+  apps:
+  - Sisense for Cloud Data Teams
+  listing_count: 1
+  detected: '2026-10-18'
+  detected_by: mirror-platform-listings.py
+  category: Slack app
+- partner_name: Adobe Creative Cloud (own)
+  partner: adobe-creative-cloud
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/a3ccee64/sisense-blox-template
+  mirror_of: adobe-creative-cloud/integrations/adobe-creative-cloud-integration-edges.yml
+  apps:
+  - Sisense Blox Template
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Express)
+- partner_name: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_match: mirror
+  mirror_match: domain
+  type: marketplace
+  relationship: platform-app
+  direction: third-party
+  channel: partner-built
+  marketplace: own
+  evidence: https://exchange.adobe.com/apps/cc/cfe8a525/sisense-for-adobe-photoshop
+  mirror_of: adobe-photoshop/integrations/adobe-photoshop-integration-edges.yml
+  apps:
+  - Sisense for Adobe Photoshop
+  listing_count: 1
+  detected: '2026-10-23'
+  detected_by: mirror-platform-listings.py
+  category: Adobe Exchange Creative Cloud listing (Photoshop)
 source:
 - okta/integrations/okta-integration-edges.yml

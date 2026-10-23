@@ -15,19 +15,6 @@
   relationship: distribution-channel
   status: not-a-workflow
   arazzo: null
-- slug: sisense-okta-own
-  label: Okta (own)
-  partner: okta
-  partner_name: Okta (own)
-  category: Single Sign-On
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://www.okta.com/integrations/periscopedata/
-  source: edge
-  relationship: platform-app
-  status: not-a-workflow
-  arazzo: null
 - slug: sisense-zapier
   label: Zapier
   partner: zapier
@@ -51,19 +38,6 @@
     app_slug: sisense
     beta: false
     builder: unknown (not in the directory record)
-  status: not-a-workflow
-  arazzo: null
-- slug: sisense-slack-own
-  label: Slack (own)
-  partner: slack
-  partner_name: Slack (own)
-  category: Slack app
-  type: marketplace
-  marketplace: own
-  channel: partner-built
-  evidence: https://slack.com/marketplace/A4C6CSAFM-sisense-for-cloud-data-teams
-  source: edge
-  relationship: platform-app
   status: not-a-workflow
   arazzo: null
 - slug: sisense-battery-ventures
@@ -92,5 +66,57 @@
     detected_by: sweep-vc-portfolios.py
     detected: '2026-10-21'
     status: Active
+  status: not-a-workflow
+  arazzo: null
+- slug: sisense-okta-own
+  label: Okta (own)
+  partner: okta
+  partner_name: Okta (own)
+  category: Single Sign-On
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://www.okta.com/integrations/periscopedata/
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: sisense-slack-own
+  label: Slack (own)
+  partner: slack
+  partner_name: Slack (own)
+  category: Slack app
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://slack.com/marketplace/A4C6CSAFM-sisense-for-cloud-data-teams
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: sisense-adobe-creative-cloud-own
+  label: Adobe Creative Cloud (own)
+  partner: adobe-creative-cloud
+  partner_name: Adobe Creative Cloud (own)
+  category: Adobe Exchange Creative Cloud listing (Express)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/a3ccee64/sisense-blox-template
+  source: edge
+  relationship: platform-app
+  status: not-a-workflow
+  arazzo: null
+- slug: sisense-adobe-photoshop-own
+  label: Adobe Photoshop (own)
+  partner: adobe-photoshop
+  partner_name: Adobe Photoshop (own)
+  category: Adobe Exchange Creative Cloud listing (Photoshop)
+  type: marketplace
+  marketplace: own
+  channel: partner-built
+  evidence: https://exchange.adobe.com/apps/cc/cfe8a525/sisense-for-adobe-photoshop
+  source: edge
+  relationship: platform-app
   status: not-a-workflow
   arazzo: null
