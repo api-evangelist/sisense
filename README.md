@@ -1,4 +1,4 @@
-# Sisense (sisense)
+# Sisense
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,108 +66,185 @@
 
 Sisense is a business intelligence and analytics platform that enables organizations to build and embed analytics into applications and workflows. It provides REST APIs for managing dashboards, data models (Elasticubes and live models), users, groups, data security rules, and builds. The platform supports both extract-based and live data model architectures with comprehensive programmatic administration capabilities.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/sisense/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/sisense/refs/heads/main/apis.yml)
+**Areas:** Analytics · Business Intelligence · Dashboards · Data Models · Embedded Analytics
 
-## Scope
+## Sisense on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Sisense is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/sisense/](https://apis.io/providers/sisense/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Analytics
-- Business Intelligence
-- Dashboards
-- Data Models
-- Embedded Analytics
+- [Sisense REST API v2](https://apis.io/apis/sisense/rest-api-v2/) — The Sisense REST API v2 provides access to Datamodels (the v2 replacement for Elasticubes), builds, and advanced data model management capabilities…
+- [Sisense User and Role Management API](https://apis.io/apis/sisense/user-role-management-api/) — The Sisense User and Role Management API (RBAC) enables administrators to manage users, roles, and permissions programmatically. Available on select plans…
+- [Sisense Authentication API](https://apis.io/apis/sisense/sisense-authentication-api/) — Login and token management
+- [Sisense Dashboards API](https://apis.io/apis/sisense/sisense-dashboards-api/) — Create, read, update, and manage dashboards
+- [Sisense Data Security API](https://apis.io/apis/sisense/sisense-data-security-api/) — Configure row-level data security rules
+- [Sisense Elasticubes API](https://apis.io/apis/sisense/sisense-elasticubes-api/) — Manage Elasticube data models and builds
+- [Sisense Groups API](https://apis.io/apis/sisense/sisense-groups-api/) — Manage user groups for access control
+- [Sisense Users API](https://apis.io/apis/sisense/sisense-users-api/) — Manage Sisense users and user settings
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-01-08
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### MCP servers (1)
 
-### Sisense REST API v1
+Model Context Protocol servers that expose the API to agents.
 
-The Sisense REST API v1 provides programmatic access to dashboards, users, groups, Elasticubes, data security rules, and builds. It supports both extract-based Elasticube models and live data models. Authentication uses Bearer tokens obtained via the login endpoint or from User Profiles settings.
+- [sisense](https://apis.io/servers/sisense/sisense/)
 
-- **Human URL:** [https://developer.sisense.com/guides/restApi/v1/](https://developer.sisense.com/guides/restApi/v1/)
-- **Base URL:** `https://your-sisense-host/api/v1`
+#### Agentic access (1)
 
-#### Tags
+Which operations an agent can call, which act, and which need a human in the loop.
 
-- Dashboards
-- Users
-- Groups
-- Elasticubes
-- Data Models
-- Analytics
+- [Sisense Agentic Access](https://apis.io/agentic-access/sisense/sisense-agentic-access/)
 
-#### Properties
+#### JSON Schema (2)
 
-- [Documentation](https://developer.sisense.com/guides/restApi/v1/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/sisense/refs/heads/main/openapi/sisense-rest-api-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Postman Collection](collections/sisense-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sisense-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+The data models the API reads and writes.
 
-### Sisense REST API v2
+- [Sisense Dashboard](https://apis.io/schemas/sisense/sisense-dashboard/)
+- [Sisense User](https://apis.io/schemas/sisense/sisense-user/)
 
-The Sisense REST API v2 provides access to Datamodels (the v2 replacement for Elasticubes), builds, and advanced data model management capabilities including schema management, field configuration, and live data model operations.
+#### JSON Structure (1)
 
-- **Human URL:** [https://developer.sisense.com/guides/restApi/v2/](https://developer.sisense.com/guides/restApi/v2/)
-- **Base URL:** `https://your-sisense-host/api/v2`
+Data models expressed in JSON Structure.
 
-#### Tags
+- [Sisense Dashboard Structure](https://apis.io/json-structure/sisense/sisense-dashboard-structure/)
 
-- Data Models
-- Builds
-- Analytics
+#### JSON-LD (1)
 
-#### Properties
+Linked-data contexts for the provider's vocabulary.
 
-- [Documentation](https://developer.sisense.com/guides/restApi/v2/)
-- [Postman Collection](collections/sisense-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sisense-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+- [Sisense Context](https://apis.io/jsonld/sisense/sisense-context/)
 
-### Sisense User and Role Management API
+#### Vocabulary (1)
 
-The Sisense User and Role Management API (RBAC) enables administrators to manage users, roles, and permissions programmatically. Available on select plans through contact with Customer Success Manager.
+The provider's domain terms, defined.
 
-- **Human URL:** [https://dtdocs.sisense.com/article/user-and-role-management-api-rbac](https://dtdocs.sisense.com/article/user-and-role-management-api-rbac)
-- **Base URL:** `https://your-sisense-host/api/v1`
+- [Sisense Vocabulary](https://apis.io/vocabularies/sisense/sisense-vocabulary/)
 
-#### Tags
+#### Examples (2)
 
-- Users
-- Roles
-- RBAC
-- Identity
+Example requests and responses.
 
-#### Properties
+- [Sisense Create User Example](https://apis.io/examples/sisense/sisense-create-user-example/)
+- [Sisense List Dashboards Example](https://apis.io/examples/sisense/sisense-list-dashboards-example/)
 
-- [Documentation](https://dtdocs.sisense.com/article/user-and-role-management-api-rbac)
-- [Postman Collection](collections/sisense-rest-api.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/sisense-rest-api.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+#### Collections (13)
 
-## Common Properties
+Postman and Open Collection request collections.
 
-- [LinkedIn](https://www.linkedin.com/company/sisense)
+- [Sisense REST Authentication API](https://apis.io/collections/sisense/open-sisense-authentication-api/)
+- [Sisense REST Authentication Dashboards API](https://apis.io/collections/sisense/open-sisense-dashboards-api/)
+- [Sisense REST Authentication Data Security API](https://apis.io/collections/sisense/open-sisense-data-security-api/)
+- [Sisense REST Authentication Elasticubes API](https://apis.io/collections/sisense/open-sisense-elasticubes-api/)
+- [Sisense REST Authentication Groups API](https://apis.io/collections/sisense/open-sisense-groups-api/)
+- [Sisense REST API](https://apis.io/collections/sisense/open-sisense-rest-api/)
+- [Sisense REST Authentication Users API](https://apis.io/collections/sisense/open-sisense-users-api/)
+- [Sisense REST Authentication API](https://apis.io/collections/sisense/postman-sisense-authentication-api/)
+- [Sisense REST Authentication Dashboards API](https://apis.io/collections/sisense/postman-sisense-dashboards-api/)
+- [Sisense REST Authentication Data Security API](https://apis.io/collections/sisense/postman-sisense-data-security-api/)
+- [Sisense REST Authentication Elasticubes API](https://apis.io/collections/sisense/postman-sisense-elasticubes-api/)
+- [Sisense REST Authentication Groups API](https://apis.io/collections/sisense/postman-sisense-groups-api/)
+- [Sisense REST Authentication Users API](https://apis.io/collections/sisense/postman-sisense-users-api/)
+
+#### Governance rules (2)
+
+Spectral rulesets for the provider's contracts.
+
+- [Sisense — jsonschema rules](https://apis.io/rules/sisense/sisense-jsonschema-spectral-rules/)
+- [Sisense API Rules](https://apis.io/rules/sisense/sisense-rules/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Sisense Authentication](https://apis.io/security/sisense/sisense-authentication/)
+- [Sisense Domain Security](https://apis.io/security/sisense/sisense-domain-security/)
+- [Sisense Trust Center](https://apis.io/security/sisense/sisense-trust-center/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Sisense Plans Pricing](https://apis.io/plans/sisense/sisense-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Sisense Rate Limits](https://apis.io/rate-limits/sisense/sisense-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Sisense Finops](https://apis.io/finops/sisense/sisense-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
 - [Website](https://www.sisense.com/)
-- [Developer Portal](https://developer.sisense.com/)
 - [Documentation](https://docs.sisense.com/)
 - [Pricing](https://www.sisense.com/pricing/)
-- [Blog](https://www.sisense.com/blog/)
-- [Git Hub Org](https://github.com/sisense)
-- [Community](https://community.sisense.com/)
-- [Terms of Service](https://www.sisense.com/legal/terms-of-service/)
-- [Privacy Policy](https://www.sisense.com/legal/privacy-policy/)
 - [Support](https://support.sisense.com/)
-- [Integrations](https://www.sisense.com/marketplace/)
-- [L L Ms Txt](https://developer.sisense.com/llms.txt)
+- [Blog](https://www.sisense.com/blog/)
+- [Terms of service](https://www.sisense.com/legal/terms-of-service/)
+- [Privacy policy](https://www.sisense.com/legal/privacy-policy/)
 
-## Maintainers
+## API Evangelist rating
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+**Kin Score 39.7** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 75.0 |
+| Contract quality | 56.4 |
+| Contract governance | 9.8 |
+| Operational transparency | 10.5 |
+| Developer ergonomics | 36.9 |
+| Access clarity | 36.8 |
+
+**Agent readiness 44.1** — agent-ready (gated down from agent-native)
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | — |
+| MCP Server | verified |
+| Auth Clarity | served (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | served (partial credit) |
+| Protected Resource Metadata | verified |
+| Dynamic Client Registration | yes |
+| Agentic Commerce | — |
+| Pagination Ratio | partial |
+| Operation Distinctiveness | distinct |
+
+**Regulatory alignment 25.5** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/sisense/](https://apis.io/providers/sisense/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Sisense: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/sisense/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
